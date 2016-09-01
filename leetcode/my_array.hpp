@@ -15,6 +15,7 @@ class Solution
 {
 public:
     std::vector<int> plus_one_1(std::vector<int> &digits);
+    std::vector<int> plus_value(std::vector<int> &digits, int v);
 };
 
 #endif /* my_array_hpp */
