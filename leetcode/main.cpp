@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <vector>
 
 #include "my_array.hpp"
 
@@ -29,6 +30,9 @@ int main(int argc, const char * argv[]) {
     result = solution.plus_one_1(digits);
     
     my_print(result);
+    
+    vector<int> nums = {2, 7, 11, 15};
+    vector<int> res = solution.two_sum(nums, 22);
     
     return 0;
 }
