@@ -16,6 +16,8 @@ class Solution
 public:
     std::vector<int> plus_one_1(std::vector<int> &digits);
     std::vector<int> plus_value(std::vector<int> &digits, int v);
+    // permutations
+    std::vector<std::vector<int> > permute(std::vector<int> &nums);
 };
 
 #endif /* my_array_hpp */

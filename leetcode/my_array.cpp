@@ -6,6 +6,7 @@
 //  Copyright © 2016年 heyong. All rights reserved.
 //
 
+#include <algorithm>
 #include "my_array.hpp"
 
 std::vector<int> Solution::plus_one_1(std::vector<int> &digits)
@@ -43,4 +44,16 @@ std::vector<int> Solution::plus_value(std::vector<int> &digits, int v)
     }
     
     return digits;
+}
+
+std::vector<std::vector<int> > Solution::permute(std::vector<int> &nums)
+{
+    std::vector<std::vector<int> > res;
+    sort(nums.begin(), nums.end());
+    
+    do {
+        res.push_back(nums);
+    } while (next_permutation(nums.begin(), nums.end()));
+    
+    return res;
 }
