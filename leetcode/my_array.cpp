@@ -7,6 +7,7 @@
 //
 
 #include <algorithm>
+#include <unordered_map>
 #include "my_array.hpp"
 
 std::vector<int> Solution::plus_one_1(std::vector<int> &digits)
@@ -54,6 +55,27 @@ std::vector<std::vector<int> > Solution::permute(std::vector<int> &nums)
     do {
         res.push_back(nums);
     } while (next_permutation(nums.begin(), nums.end()));
+    
+    return res;
+}
+
+std::vector<int> Solution::two_sum(std::vector<int> &nums, int target)
+{
+    std::unordered_map<int, int> mapping;
+    std::vector<int> res;
+    
+    for (size_t i = 0; i < nums.size(); ++i) {
+        mapping[nums[i]] = i;
+    }
+    
+    for (size_t i = 0; i < nums.size(); ++i) {
+        int gap = target - nums[i];
+        if (mapping.find(gap) != mapping.end() && mapping[gap] > i) {
+            res.push_back(i + 1);
+            res.push_back(mapping[gap] + 1);
+            break;
+        }
+    }
     
     return res;
 }

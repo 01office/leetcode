@@ -18,6 +18,9 @@ public:
     std::vector<int> plus_value(std::vector<int> &digits, int v);
     // permutations
     std::vector<std::vector<int> > permute(std::vector<int> &nums);
+    
+    // two sum
+    std::vector<int> two_sum(std::vector<int> &nums, int target);
 };
 
 #endif /* my_array_hpp */
