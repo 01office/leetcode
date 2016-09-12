@@ -21,6 +21,12 @@ public:
     
     // two sum
     std::vector<int> two_sum(std::vector<int> &nums, int target);
+    
+    // pow
+    double my_pow(double x, int n);
+    
+private:
+    double m_power(double x, int n);
 };
 
 #endif /* my_array_hpp */

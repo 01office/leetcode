@@ -79,3 +79,27 @@ std::vector<int> Solution::two_sum(std::vector<int> &nums, int target)
     
     return res;
 }
+
+double Solution::my_pow(double x, int n)
+{
+    if (n < 0) {
+        return 1.0 / m_power(x, -n);
+    }
+    else {
+        return m_power(x, n);
+    }
+}
+
+double Solution::m_power(double x, int n)
+{
+    if (n == 0) {
+        return 1.0;
+    }
+    double result = m_power(x, n / 2);
+    if (n % 2 == 0) {
+        return result * result;
+    }
+    else {
+        return result * result * x;
+    }
+}
