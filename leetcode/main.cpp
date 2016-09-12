@@ -34,5 +34,7 @@ int main(int argc, const char * argv[]) {
     vector<int> nums = {2, 7, 11, 15};
     vector<int> res = solution.two_sum(nums, 22);
     
+    cout << solution.my_sqrt(15.0) << endl;
+    
     return 0;
 }

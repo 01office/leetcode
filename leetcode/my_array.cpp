@@ -8,6 +8,7 @@
 
 #include <algorithm>
 #include <unordered_map>
+#include <cmath>
 #include "my_array.hpp"
 
 std::vector<int> Solution::plus_one_1(std::vector<int> &digits)
@@ -102,4 +103,14 @@ double Solution::m_power(double x, int n)
     else {
         return result * result * x;
     }
+}
+
+double Solution::my_sqrt(double N)
+{
+    double X = 1.0;
+    while (fabs(X * X - N) > 0.0001) {
+        X = (X + N / X) / 2;
+    }
+    
+    return X;
 }

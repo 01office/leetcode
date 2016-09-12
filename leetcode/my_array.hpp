@@ -25,6 +25,9 @@ public:
     // pow
     double my_pow(double x, int n);
     
+    // Newton's Method
+    double my_sqrt(double N);
+    
 private:
     double m_power(double x, int n);
 };
