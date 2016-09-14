@@ -37,5 +37,7 @@ int main(int argc, const char * argv[]) {
     cout << solution.my_pow(5.0, 5) << endl;
     cout << solution.my_sqrt(15.0) << endl;
     
+    cout << solution.max_profit(nums) << endl;
+    
     return 0;
 }
