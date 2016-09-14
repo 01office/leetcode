@@ -28,6 +28,9 @@ public:
     // Newton's Method
     double my_sqrt(double N);
     
+    // best time to buy and sell stocks
+    int max_profit(std::vector<int> &prices);
+    
 private:
     double m_power(double x, int n);
 };
