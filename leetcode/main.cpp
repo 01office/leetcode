@@ -37,7 +37,9 @@ int main(int argc, const char * argv[]) {
     cout << solution.my_pow(5.0, 5) << endl;
     cout << solution.my_sqrt(15.0) << endl;
     
-    cout << solution.max_profit(nums) << endl;
+    vector<int> stocks = {2, 7, 3, 8, 25, 6};
+    cout << solution.max_profit(stocks) << endl;
+    cout << solution.max_profit_2(stocks) << endl;
     
     return 0;
 }

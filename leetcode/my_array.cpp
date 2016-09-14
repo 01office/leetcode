@@ -130,3 +130,17 @@ int Solution::max_profit(std::vector<int> &prices)
     
     return profit;
 }
+
+int Solution::max_profit_2(std::vector<int> &prices)
+{
+    int profit = 0;
+    int diff;
+    for (size_t i = 1; i < prices.size(); ++i) {
+        diff = prices[i] - prices[i - 1];
+        if (diff > 0) {
+            profit += diff;
+        }
+    }
+    
+    return profit;
+}
