@@ -114,3 +114,19 @@ double Solution::my_sqrt(double N)
     
     return X;
 }
+
+int Solution::max_profit(std::vector<int> &prices)
+{
+    if (prices.size() < 2) {
+        return 0;
+    }
+    int profit = 0;
+    int cur_min = prices[0];
+    
+    for (size_t i = 1; i < prices.size(); ++i) {
+        profit = (profit >= prices[i] - cur_min) ? profit : (prices[i] - cur_min);
+        cur_min = cur_min > prices[i] ? prices[i] : cur_min;
+    }
+    
+    return profit;
+}
