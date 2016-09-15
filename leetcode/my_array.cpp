@@ -144,3 +144,17 @@ int Solution::max_profit_2(std::vector<int> &prices)
     
     return profit;
 }
+
+bool Solution::can_jump(std::vector<int> nums)
+{
+    if (nums.size() < 2) {
+        return true;
+    }
+    
+    int reach = 1;
+    for (size_t i = 0; i < reach && i < nums.size(); ++i) {
+        reach = (reach > (i + 1 + nums[i])) ? reach : (i + 1 + nums[i]);
+    }
+    
+    return reach >= nums.size();
+}

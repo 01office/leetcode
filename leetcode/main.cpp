@@ -41,5 +41,8 @@ int main(int argc, const char * argv[]) {
     cout << solution.max_profit(stocks) << endl;
     cout << solution.max_profit_2(stocks) << endl;
     
+    vector<int> stairs = {3, 2, 1, 1, 4};
+    cout << solution.can_jump(stairs) << endl;
+    
     return 0;
 }

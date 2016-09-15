@@ -33,6 +33,9 @@ public:
     // best time to buy and sell stock II: multi transaction
     int max_profit_2(std::vector<int> &prices);
     
+    // jump game I
+    bool can_jump(std::vector<int> nums);
+    
 private:
     double m_power(double x, int n);
 };
