@@ -35,6 +35,8 @@ public:
     
     // jump game I
     bool can_jump(std::vector<int> nums);
+    // jump game II
+    int can_jump_2(std::vector<int> nums);
     
 private:
     double m_power(double x, int n);
