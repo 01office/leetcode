@@ -158,3 +158,36 @@ bool Solution::can_jump(std::vector<int> nums)
     
     return reach >= nums.size();
 }
+
+void quick_sort(int nums[], int left, int right)
+{
+    if (left < right)
+    {
+        int i = left, j = right, tmp = nums[left];
+        
+        while (i < j)
+        {
+            while (i < j && nums[j] >= tmp)
+            {
+                j--;
+            }
+            if (i < j)
+            {
+                nums[i++] = nums[j];
+            }
+            
+            while (i < j && nums[i] < tmp)
+            {
+                i++;
+            }
+            if (i < j)
+            {
+                nums[j--] = nums[i];
+            }
+        }
+        
+        nums[i] = tmp;
+        quick_sort(nums, left, i - 1);
+        quick_sort(nums, i + 1, right);
+    }
+}
