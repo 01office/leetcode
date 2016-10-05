@@ -42,4 +42,6 @@ private:
     double m_power(double x, int n);
 };
 
+void quick_sort(int nums[], int left, int right);
+
 #endif /* my_array_hpp */
