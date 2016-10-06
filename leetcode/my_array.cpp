@@ -159,6 +159,7 @@ bool Solution::can_jump(std::vector<int> nums)
     return reach >= nums.size();
 }
 
+// divide and conquer: quick sort
 void quick_sort(int nums[], int left, int right)
 {
     if (left < right)
