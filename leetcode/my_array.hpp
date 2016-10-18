@@ -38,6 +38,8 @@ public:
     // jump game II
     int can_jump_2(std::vector<int> nums);
     
+    int largest_rectangle_area(std::vector<int> &heights);
+    
 private:
     double m_power(double x, int n);
 };
