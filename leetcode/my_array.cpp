@@ -192,3 +192,27 @@ void quick_sort(int nums[], int left, int right)
         quick_sort(nums, i + 1, right);
     }
 }
+
+int Solution::largest_rectangle_area(std::vector<int> &heights)
+{
+    int len = heights.size();
+    int max_size = 0;
+    
+    for (int i = 0; i < len; ++i) {
+        int min_height = heights[i];
+        int cur_size = min_height;
+        
+        for (int j = i; j < len; ++j) {
+            if (heights[j] < min_height) {
+                min_height = heights[j];
+            }
+                cur_size = min_height * (j - i + 1);
+            
+            if (cur_size > max_size) {
+                max_size = cur_size;
+            }
+        }
+    }
+    
+    return max_size;
+}
