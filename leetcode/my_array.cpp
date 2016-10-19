@@ -218,30 +218,60 @@ int Solution::largest_rectangle_area(std::vector<int> &heights)
     return max_size;
 }
 
+//int Solution::largest_area(std::vector<int> &histogram)
+//{
+//    histogram.push_back(-1);
+//    int index = 0;
+//    int max_area = 0;
+//    std::stack<int> s;
+//    
+//    while (index < histogram.size()) {
+//        if (s.size() == 0 || histogram[s.top()] <= histogram[index]) {
+//            s.push(index);
+//            index += 1;
+//        }
+//        else {
+//            int top = s.top();
+//            int area = 0;
+//            if (s.size() == 0) {
+//                area = histogram[top] * index;
+//            }
+//            else {
+//                area = histogram[top] * (index - s.top() - 1);
+//            }
+//            
+//            max_area = (area > max_area) ? area : max_area;
+//        }
+//    }
+//    
+//    return max_area;
+//}
+
 int Solution::largest_area(std::vector<int> &histogram)
 {
-    histogram.push_back(-1);
-    int index = 0;
-    int max_area = 0;
     std::stack<int> s;
+    int max_area = 0;
+    int tp;
+    int area_with_tp;
     
-    while (index < histogram.size()) {
-        if (s.size() == 0 || histogram[s.top()] <= histogram[index]) {
-            s.push(index);
-            index += 1;
+    int idx = 0;
+    while (idx < histogram.size()) {
+        if (s.empty() || histogram[idx] > histogram[s.top()]) {
+            s.push(idx++);
         }
         else {
-            int top = s.top();
-            int area = 0;
-            if (s.size() == 0) {
-                area = histogram[top] * index;
-            }
-            else {
-                area = histogram[top] * (index - s.top() - 1);
-            }
-            
-            max_area = (area > max_area) ? area : max_area;
+            tp = s.top();
+            s.pop();
+            area_with_tp = histogram[tp] * (s.empty() ? idx : (idx - s.top() - 1));
+            max_area = area_with_tp > max_area ? area_with_tp : max_area;
         }
+    }
+    
+    while (!s.empty()) {
+        tp = s.top();
+        s.pop();
+        area_with_tp = histogram[tp] * (s.empty() ? idx : (idx - s.top() - 1));
+        max_area = area_with_tp > max_area ? area_with_tp : max_area;
     }
     
     return max_area;
