@@ -45,7 +45,7 @@ int main(int argc, const char * argv[]) {
     cout << solution.can_jump(stairs) << endl;
     
     vector<int> heights = {2, 1, 5, 6, 2, 3};
-    cout << solution.largest_rectangle_area(heights) << endl;
+    cout << solution.largest_area(heights) << endl;
     
     return 0;
 }

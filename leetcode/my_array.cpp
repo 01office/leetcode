@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <unordered_map>
 #include <cmath>
+#include <stack>
 #include "my_array.hpp"
 
 std::vector<int> Solution::plus_one_1(std::vector<int> &digits)
@@ -195,7 +196,7 @@ void quick_sort(int nums[], int left, int right)
 
 int Solution::largest_rectangle_area(std::vector<int> &heights)
 {
-    int len = heights.size();
+    size_t len = heights.size();
     int max_size = 0;
     
     for (int i = 0; i < len; ++i) {
@@ -215,4 +216,33 @@ int Solution::largest_rectangle_area(std::vector<int> &heights)
     }
     
     return max_size;
+}
+
+int Solution::largest_area(std::vector<int> &histogram)
+{
+    histogram.push_back(-1);
+    int index = 0;
+    int max_area = 0;
+    std::stack<int> s;
+    
+    while (index < histogram.size()) {
+        if (s.size() == 0 || histogram[s.top()] <= histogram[index]) {
+            s.push(index);
+            index += 1;
+        }
+        else {
+            int top = s.top();
+            int area = 0;
+            if (s.size() == 0) {
+                area = histogram[top] * index;
+            }
+            else {
+                area = histogram[top] * (index - s.top() - 1);
+            }
+            
+            max_area = (area > max_area) ? area : max_area;
+        }
+    }
+    
+    return max_area;
 }

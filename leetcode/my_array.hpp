@@ -39,6 +39,8 @@ public:
     int can_jump_2(std::vector<int> nums);
     
     int largest_rectangle_area(std::vector<int> &heights);
+    // O(n) excellent!
+    int largest_area(std::vector<int> &histogram);
     
 private:
     double m_power(double x, int n);
