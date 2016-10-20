@@ -256,7 +256,7 @@ int Solution::largest_area(std::vector<int> &histogram)
     
     int idx = 0;
     while (idx < histogram.size()) {
-        if (s.empty() || histogram[idx] > histogram[s.top()]) {
+        if (s.empty() || histogram[idx] >= histogram[s.top()]) {
             s.push(idx++);
         }
         else {
