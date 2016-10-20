@@ -42,6 +42,8 @@ public:
     // O(n) excellent!
     int largest_area(std::vector<int> &histogram);
     
+    int manacher(std::string &str);
+    
 private:
     double m_power(double x, int n);
 };

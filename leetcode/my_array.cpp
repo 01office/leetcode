@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <cmath>
 #include <stack>
+#include <string>
 #include "my_array.hpp"
 
 std::vector<int> Solution::plus_one_1(std::vector<int> &digits)
@@ -275,4 +276,38 @@ int Solution::largest_area(std::vector<int> &histogram)
     }
     
     return max_area;
+}
+
+int Solution::manacher(std::string &str)
+{
+    int *p = new int[str.size()];
+    
+    int id = 0;
+    int mx = 0;
+    int i = 1;
+    
+    for (; i < str.size(); ++i) {
+        if (i < mx) {
+            p[i] = p[2 * id - 1] < (mx - i) ? p[2 * id - 1] : (mx - i);
+        }
+        else {
+            p[i] = 0;
+        }
+        
+        while (str[i + p[i] + 1] == str[i - p[i] - 1]) {
+            p[i]++;
+        }
+        
+        if (i + p[i] > mx) {
+            id = i;
+            mx = id + p[i];
+        }
+    }
+    
+    int max_length = 0;
+    for (i = 0; i < str.size(); ++i) {
+        max_length = p[i] > max_length ? p[i] : max_length;
+    }
+    
+    return max_length;
 }
