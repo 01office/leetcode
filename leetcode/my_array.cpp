@@ -311,3 +311,36 @@ int Solution::manacher(std::string &str)
     
     return max_length;
 }
+
+int Solution::other_manacher(std::string &str)
+{
+    int *p = new int[str.size()];
+    
+    int mx = 0;
+    int id = 0;
+    int max_len = 0;
+    
+    for (int i = 1; i < str.size(); ++i) {
+        if (i < mx) {
+            p[i] = p[2 * id - i] < (mx - i) ? p[2 * id - i] : (mx - i);
+        }
+        else {
+            p[i] = 1;
+        }
+        
+        while (str[i + p[i] + 1] == str[i - p[i] - 1]) {
+            p[i]++;
+        }
+        
+        if (i + p[i] > mx) {
+            mx = i + p[i];
+            id = i;
+        }
+    }
+    
+    for (int j = 0; j < str.size(); ++j) {
+        max_len = p[j] > max_len ? p[j] : max_len;
+    }
+    
+    return max_len;
+}
