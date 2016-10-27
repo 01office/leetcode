@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
 
 #include "my_array.hpp"
 
@@ -47,6 +48,16 @@ int main(int argc, const char * argv[]) {
     // vector<int> heights = {2, 1, 5, 6, 2, 3};
     vector<int> heights = {6, 1, 5, 4, 5, 2, 6};
     cout << solution.largest_area(heights) << endl;
+    
+    priority_queue<int, vector<int>, cmp2> pq1;
+    pq1.push(4);
+    pq1.push(7);
+    pq1.push(5);
+    while (!pq1.empty()) {
+        cout << pq1.top() << " ";
+        pq1.pop();
+    }
+    cout << endl;
     
     return 0;
 }

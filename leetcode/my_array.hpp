@@ -51,4 +51,19 @@ private:
 
 void quick_sort(int nums[], int left, int right);
 
+struct cmp1
+{
+    bool operator ()(int x, int y)
+    {
+        return x > y;
+    }
+};
+struct cmp2
+{
+    bool operator ()(int x, int y)
+    {
+        return x < y;
+    }
+};
+
 #endif /* my_array_hpp */
