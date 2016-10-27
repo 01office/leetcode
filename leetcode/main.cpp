@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <functional>
 
 #include "my_array.hpp"
 
@@ -49,7 +50,7 @@ int main(int argc, const char * argv[]) {
     vector<int> heights = {6, 1, 5, 4, 5, 2, 6};
     cout << solution.largest_area(heights) << endl;
     
-    priority_queue<int, vector<int>, cmp2> pq1;
+    priority_queue<int, vector<int>, less<int> > pq1;
     pq1.push(4);
     pq1.push(7);
     pq1.push(5);
