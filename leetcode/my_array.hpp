@@ -47,8 +47,12 @@ public:
     int manacher(std::string &str);
     int other_manacher(std::string &str);
     
+    // Dutch National Flag Problem
+    void dutch_flag(std::vector<int> &flags);
+    
 private:
     double m_power(double x, int n);
+    void m_swap(int &x, int &y);
 };
 
 void quick_sort(int nums[], int left, int right);

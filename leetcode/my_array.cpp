@@ -6,12 +6,22 @@
 //  Copyright © 2016年 heyong. All rights reserved.
 //
 
+#include <iostream>
 #include <algorithm>
 #include <unordered_map>
 #include <cmath>
 #include <stack>
 #include <string>
 #include "my_array.hpp"
+
+void Solution::m_swap(int &x, int &y)
+{
+    if (x != y) {
+        x ^= y;
+        y ^= x;
+        x ^= y;
+    }
+}
 
 std::vector<int> Solution::plus_one_1(std::vector<int> &digits)
 {
@@ -364,5 +374,32 @@ double MedianFinder::findMedian()
     }
     else {
         return left_heap.top();
+    }
+}
+
+// Red:0 White:1 Blue:2
+void Solution::dutch_flag(std::vector<int> &flags)
+{
+    if (flags.size() < 3) {
+        std::cout << "The size must be large than 3." << std::endl;
+        return;
+    }
+    
+    int before = 0;
+    int current = 0;
+    int end = flags.size() - 1;
+    while (current <= end) {
+        if (flags[current] == 0) {
+            m_swap(flags[before], flags[current]);
+            before++;
+            current++;
+        }
+        else if (flags[current] == 1) {
+            current++;
+        }
+        else {
+            m_swap(flags[current], flags[end]);
+            end--;
+        }
     }
 }

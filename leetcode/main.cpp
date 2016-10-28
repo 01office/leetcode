@@ -68,5 +68,9 @@ int main(int argc, const char * argv[]) {
     mf.addNum(7);
     cout << mf.findMedian() << endl;
     
+    vector<int> dflags = {2, 1, 2, 0, 1, 1};
+    solution.dutch_flag(dflags);
+    my_print(dflags);
+    
     return 0;
 }
