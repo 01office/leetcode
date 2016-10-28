@@ -10,6 +10,8 @@
 #define my_array_hpp
 
 #include <vector>
+#include <queue>
+#include <functional>
 
 class Solution
 {
@@ -64,6 +66,17 @@ struct cmp2
     {
         return x < y;
     }
+};
+
+class MedianFinder
+{
+public:
+    void addNum(int num);
+    double findMedian();
+    
+private:
+    std::priority_queue<int, std::vector<int>, std::less<int> > left_heap;
+    std::priority_queue<int, std::vector<int>, std::greater<int> > right_heap;
 };
 
 #endif /* my_array_hpp */
