@@ -344,3 +344,25 @@ int Solution::other_manacher(std::string &str)
     
     return max_len;
 }
+
+void MedianFinder::addNum(int num)
+{
+    left_heap.push(num);
+    right_heap.push(left_heap.top());
+    left_heap.pop();
+    
+    if (left_heap.size() < right_heap.size()) {
+        left_heap.push(right_heap.top());
+        right_heap.pop();
+    }
+}
+
+double MedianFinder::findMedian()
+{
+    if (left_heap.size() == right_heap.size()) {
+        return (left_heap.top() + right_heap.top()) / 2.0;
+    }
+    else {
+        return left_heap.top();
+    }
+}
