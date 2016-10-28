@@ -60,5 +60,13 @@ int main(int argc, const char * argv[]) {
     }
     cout << endl;
     
+    MedianFinder mf;
+    mf.addNum(6);
+    cout << mf.findMedian() << endl;
+    mf.addNum(5);
+    mf.addNum(10);
+    mf.addNum(7);
+    cout << mf.findMedian() << endl;
+    
     return 0;
 }
