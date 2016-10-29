@@ -9,6 +9,7 @@
 #ifndef my_array_hpp
 #define my_array_hpp
 
+#include <iostream>
 #include <vector>
 #include <queue>
 #include <functional>
@@ -82,5 +83,17 @@ private:
     std::priority_queue<int, std::vector<int>, std::less<int> > left_heap;
     std::priority_queue<int, std::vector<int>, std::greater<int> > right_heap;
 };
+
+class Get1ToN
+{
+    static int i;
+    
+public:
+    Get1ToN()
+    {
+        std::cout << i++ << " ";
+    }
+};
+int Get1ToN::i = 1;
 
 #endif /* my_array_hpp */
