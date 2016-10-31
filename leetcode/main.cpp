@@ -72,5 +72,7 @@ int main(int argc, const char * argv[]) {
     solution.dutch_flag(dflags);
     my_print(dflags);
     
+    Get1ToN g1to100[100];
+    
     return 0;
 }

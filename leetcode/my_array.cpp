@@ -403,3 +403,6 @@ void Solution::dutch_flag(std::vector<int> &flags)
         }
     }
 }
+
+int Get1ToN::i = 1;
+

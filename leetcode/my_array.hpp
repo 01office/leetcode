@@ -94,6 +94,5 @@ public:
         std::cout << i++ << " ";
     }
 };
-int Get1ToN::i = 1;
 
 #endif /* my_array_hpp */
