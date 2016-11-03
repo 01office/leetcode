@@ -74,5 +74,7 @@ int main(int argc, const char * argv[]) {
     
     Get1ToN g1to100[100];
     
+    for_each(heights.begin(), heights.end(), Display<int>());
+    
     return 0;
 }

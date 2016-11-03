@@ -95,4 +95,13 @@ public:
     }
 };
 
+template <typename T>
+class Display {
+public:
+    void operator()(T &x)
+    {
+        std::cout << x << std::endl;
+    }
+};
+
 #endif /* my_array_hpp */
