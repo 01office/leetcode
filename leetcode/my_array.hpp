@@ -100,7 +100,7 @@ class Display {
 public:
     void operator()(T &x)
     {
-        std::cout << x << std::endl;
+        std::cout << x << " ";
     }
 };
 

@@ -10,6 +10,7 @@
 #include <vector>
 #include <queue>
 #include <functional>
+#include <algorithm>
 
 #include "my_array.hpp"
 
@@ -75,6 +76,13 @@ int main(int argc, const char * argv[]) {
     // Get1ToN g1to100[100];
     
     for_each(heights.begin(), heights.end(), Display<int>());
+    cout << endl;
+    
+    vector<int> iv(heights);
+    std::sort(iv.begin(), iv.end());
+    std::replace(iv.begin(), iv.end(), 6, 9);
+    for_each(iv.begin(), iv.end(), Display<int>());
+    cout << endl;
     
     return 0;
 }
