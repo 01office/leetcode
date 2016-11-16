@@ -120,7 +120,7 @@ double Solution::m_power(double x, int n)
 double Solution::my_sqrt(double N)
 {
     double X = 1.0;
-    while (fabs(X * X - N) > 0.0001) {
+    while (fabs(X * X - N) > 0.00001) {
         X = (X + N / X) / 2;
     }
     
