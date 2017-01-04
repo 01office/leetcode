@@ -104,4 +104,6 @@ public:
     }
 };
 
+bool is_prime(int n);
+
 #endif /* my_array_hpp */

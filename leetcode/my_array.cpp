@@ -406,3 +406,15 @@ void Solution::dutch_flag(std::vector<int> &flags)
 
 int Get1ToN::i = 1;
 
+
+bool is_prime(int n)
+{
+    for (int i = 2; i * i < (n + 1); i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
