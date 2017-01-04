@@ -14,6 +14,8 @@
 #include <queue>
 #include <functional>
 
+#define NUM 100
+
 class Solution
 {
 public:
@@ -105,5 +107,6 @@ public:
 };
 
 bool is_prime(int n);
+void filter_prime();
 
 #endif /* my_array_hpp */

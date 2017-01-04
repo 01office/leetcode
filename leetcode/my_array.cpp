@@ -418,3 +418,31 @@ bool is_prime(int n)
     return true;
 }
 
+void filter_prime()
+{
+    bool prime[NUM];
+    for (int i = 2; i < NUM; i++) {
+        if (i % 2) {
+            prime[i] = true;
+        } else {
+            prime[i] = false;
+        }
+    }
+    prime[2] = true;
+    
+    for (int i = 2; i * i < NUM; i++) {
+        if (prime[i]) {
+            for (int j = i + i; j < NUM; j += i) {
+                prime[j] = false;
+            }
+        }
+    }
+    
+    for (int i = 2; i < NUM; i++) {
+        if (prime[i]) {
+            std::cout << i << " ";
+        }
+    }
+    std::cout << std::endl;
+}
+
