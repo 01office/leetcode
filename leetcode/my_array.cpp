@@ -479,3 +479,36 @@ bool EightQueen::check(int ci[], int length)
     return true;
 }
 
+void EightQueen::permutate(int ci[], int length, int index)
+{
+    if (index == length) {
+        if (check(ci, length)) {
+            g_number++;
+            print_queen(ci, length);
+        }
+    } else {
+        for (int i = index; i < length; i++) {
+            int tmp = ci[i];
+            ci[i] = ci[index];
+            ci[index] = tmp;
+            
+            permutate(ci, length, index + 1);
+            
+            tmp = ci[i];
+            ci[i] = ci[index];
+            ci[index] = tmp;
+        }
+    }
+}
+
+void EightQueen::eight_queen()
+{
+    const int queens = 8;
+    int ci[queens];
+    for (int i = 0; i < queens; i++) {
+        ci[i] = i;
+    }
+    
+    permutate(ci, queens, 0);
+}
+
