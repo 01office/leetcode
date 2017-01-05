@@ -446,3 +446,36 @@ void filter_prime()
     std::cout << std::endl;
 }
 
+
+EightQueen *EightQueen::m_pInstance = NULL;
+EightQueen *EightQueen::Instance()
+{
+    if (m_pInstance == NULL) {
+        m_pInstance = new EightQueen;
+    }
+    return m_pInstance;
+}
+
+int EightQueen::g_number = 0;
+
+void EightQueen::print_queen(int ci[], int length)
+{
+    std::cout << "Solution: " << g_number << ": ";
+    for (int i = 0; i < length; i++) {
+        std::cout << ci[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+bool EightQueen::check(int ci[], int length)
+{
+    for (int i = 0; i < length; i++) {
+        for (int j = i + 1; j < length; j++) {
+            if ((i - j == ci[i] - ci[j]) || (j - i == ci[i] - ci[j])) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+

@@ -116,9 +116,9 @@ public:
     static EightQueen *Instance();
     
     void eight_queen();
-    bool check();
-    void permutate();
-    void print_queen();
+    void permutate(int ci[], int length, int index);
+    bool check(int ci[], int length);
+    void print_queen(int ci[], int length);
     
 private:
     EightQueen(){}
@@ -127,6 +127,8 @@ private:
     EightQueen &operator= (const EightQueen &);
     
     static EightQueen *m_pInstance;
+    
+    static int g_number;
 };
 
 #endif /* my_array_hpp */
