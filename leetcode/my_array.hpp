@@ -109,4 +109,24 @@ public:
 bool is_prime(int n);
 void filter_prime();
 
+// eight queens
+class EightQueen
+{
+public:
+    static EightQueen *Instance();
+    
+    void eight_queen();
+    bool check();
+    void permutate();
+    void print_queen();
+    
+private:
+    EightQueen(){}
+    ~EightQueen(){}
+    EightQueen(const EightQueen &);
+    EightQueen &operator= (const EightQueen &);
+    
+    static EightQueen *m_pInstance;
+};
+
 #endif /* my_array_hpp */
