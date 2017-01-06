@@ -517,3 +517,35 @@ bool is_even(int n)
     return (n & 1) == 0;
 }
 
+void reorder(int *pdata, int length, bool (*func)(int))
+{
+    if (pdata == NULL || length == 0) {
+        return;
+    }
+    
+    int *pbegin = pdata;
+    int *pend = pdata + length - 1;
+    while (pbegin < pend) {
+        if (!func(*pbegin)) {
+            pbegin++;
+            continue;
+        }
+        if (func(*pend)) {
+            pend--;
+            continue;
+        }
+        
+        int tmp = *pbegin;
+        *pbegin = *pend;
+        *pend = tmp;
+    }
+}
+
+void reorder_odd_even(int *pdata, int length)
+{
+    if (pdata == NULL || length == 0) {
+        return;
+    }
+    reorder(pdata, length, is_even);
+}
+
