@@ -460,7 +460,7 @@ int EightQueen::g_number = 0;
 
 void EightQueen::print_queen(int ci[], int length)
 {
-    std::cout << "Solution: " << g_number << ": ";
+    std::cout << "Solution " << g_number << ": ";
     for (int i = 0; i < length; i++) {
         std::cout << ci[i] << " ";
     }
@@ -510,5 +510,10 @@ void EightQueen::eight_queen()
     }
     
     permutate(ci, queens, 0);
+}
+
+bool is_even(int n)
+{
+    return (n & 1) == 0;
 }
 

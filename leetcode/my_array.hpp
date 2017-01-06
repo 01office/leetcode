@@ -131,4 +131,9 @@ private:
     static int g_number;
 };
 
+// odd defore even
+bool is_even(int n);
+void reorder(int *pdata, int length, bool (*func)(int));
+void reorder_odd_even(int *pdata, int length);
+
 #endif /* my_array_hpp */
