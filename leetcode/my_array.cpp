@@ -549,3 +549,28 @@ void reorder_odd_even(int *pdata, int length)
     reorder(pdata, length, is_even);
 }
 
+char find_first_not_repeat(char *pstr)
+{
+    if (!pstr) {
+        return 0;
+    }
+    
+    const int tablesize = 256;
+    int hashtable[tablesize] = {0};
+    
+    char *key = pstr;
+    while (*key != '\0') {
+        hashtable[*(key++)]++;
+    }
+    
+    key = pstr;
+    while (*key != '\0') {
+        if (hashtable[*key] == 1) {
+            return *key;
+        }
+        key++;
+    }
+    
+    return 0;
+}
+

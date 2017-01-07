@@ -136,4 +136,6 @@ bool is_even(int n);
 void reorder(int *pdata, int length, bool (*func)(int));
 void reorder_odd_even(int *pdata, int length);
 
+char find_first_not_repeat(char *pstr);
+
 #endif /* my_array_hpp */
