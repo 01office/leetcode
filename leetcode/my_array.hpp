@@ -138,4 +138,7 @@ void reorder_odd_even(int *pdata, int length);
 
 char find_first_not_repeat(char *pstr);
 
+// the net of str is len
+void relpace_blank(char str[], int len);
+
 #endif /* my_array_hpp */

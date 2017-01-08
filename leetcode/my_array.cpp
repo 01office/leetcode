@@ -574,3 +574,39 @@ char find_first_not_repeat(char *pstr)
     return 0;
 }
 
+void relpace_blank(char str[], int len)
+{
+    if (str == NULL || len <= 0) {
+        return;
+    }
+    
+    int originallen = 0;
+    int numberofblank = 0;
+    int i = 0;
+    while (str[i] != '\0') {
+        originallen++;
+        if (str[i] == ' ') {
+            numberofblank++;
+        }
+        i++;
+    }
+    
+    int newlen = originallen + numberofblank * 2;
+    if (newlen > len) {
+        return;
+    }
+    
+    int indexoforiginal = originallen;
+    int indexofnew = newlen;
+    while (indexoforiginal >= 0 && indexofnew > indexoforiginal) {
+        if (str[indexoforiginal] == ' ') {
+            str[indexofnew--] = '0';
+            str[indexofnew--] = '2';
+            str[indexofnew--] = '%';
+        } else {
+            str[indexofnew--] = str[indexoforiginal];
+        }
+        indexoforiginal--;
+    }
+}
+
