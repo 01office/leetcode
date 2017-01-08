@@ -73,7 +73,7 @@ int main(int argc, const char * argv[]) {
     solution.dutch_flag(dflags);
     my_print(dflags);
     
-    Get1ToN g1to100[100];
+//    Get1ToN g1to100[100];
     cout << endl;
     
     for_each(heights.begin(), heights.end(), Display<int>());
@@ -84,6 +84,13 @@ int main(int argc, const char * argv[]) {
     std::replace(iv.begin(), iv.end(), 6, 9);
     for_each(iv.begin(), iv.end(), Display<int>());
     cout << endl;
+    
+    filter_prime();
+    
+    EightQueen::Instance()->eight_queen();
+    
+    int as[] = {4, 3, 2, 1, 6, 9, 7};
+    reorder_odd_even(as, 7);
     
     return 0;
 }
