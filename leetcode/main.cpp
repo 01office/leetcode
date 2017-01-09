@@ -92,5 +92,8 @@ int main(int argc, const char * argv[]) {
     int as[] = {4, 3, 2, 1, 6, 9, 7};
     reorder_odd_even(as, 7);
     
+    int ab[2][2] = {2, 7, 8};
+    cout << ab[0][1] << endl;
+    
     return 0;
 }
