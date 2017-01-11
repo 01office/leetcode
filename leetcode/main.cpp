@@ -93,7 +93,7 @@ int main(int argc, const char * argv[]) {
     reorder_odd_even(as, 7);
     
     int ab[2][2] = {{2}, {7, 8}};
-    cout << ab[0][1] << endl;
+    cout << ab[0][1] << endl;   // 0
     
     return 0;
 }
