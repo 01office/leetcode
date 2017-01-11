@@ -11,4 +11,6 @@
 
 #include <pthread.h>
 
+pthread_t pt;
+
 #endif /* my_thread_hpp */
