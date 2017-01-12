@@ -610,3 +610,12 @@ void relpace_blank(char str[], int len)
     }
 }
 
+int missing_number(int mn[], int length)
+{
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum += mn[i];
+    }
+    
+    return length * (length + 1) / 2 - sum;
+}

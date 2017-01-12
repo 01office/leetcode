@@ -141,4 +141,7 @@ char find_first_not_repeat(char *pstr);
 // the net of str is len
 void relpace_blank(char str[], int len);
 
+// missiing number
+int missing_number(int mn[], int length);
+
 #endif /* my_array_hpp */
