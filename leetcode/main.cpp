@@ -74,7 +74,7 @@ int main(int argc, const char * argv[]) {
     my_print(dflags);
     
 //    Get1ToN g1to100[100];
-    cout << endl;
+//    cout << endl;
     
     for_each(heights.begin(), heights.end(), Display<int>());
     cout << endl;
