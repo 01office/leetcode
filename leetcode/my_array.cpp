@@ -49,7 +49,7 @@ std::vector<int> Solution::plus_value(std::vector<int> &digits, int v)
     int c = v;
     for (auto it = digits.rbegin(); it != digits.rend() && c > 0; ++it) {
         (*it) += c;
-        c /= 10;
+        c = (*it) / 10;
         (*it) %= 10;
     }
     

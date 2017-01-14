@@ -13,13 +13,14 @@
 #include <algorithm>
 
 #include "my_array.hpp"
+// #include "my_thread.hpp"
 
 using namespace std;
 
 void my_print(vector<int> &v)
 {
-    int n = v.size();
-    for (int i = 0; i < n; ++i) {
+    size_t n = v.size();
+    for (size_t i = 0; i < n; ++i) {
         cout << v[i];
     }
     cout << endl;
