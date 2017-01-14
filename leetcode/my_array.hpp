@@ -127,7 +127,6 @@ private:
     EightQueen &operator= (const EightQueen &);
     
     static EightQueen *m_pInstance;
-    
     static int g_number;
 };
 

@@ -610,6 +610,7 @@ void relpace_blank(char str[], int len)
     }
 }
 
+// find the missing number from 0 to n
 int missing_number(int mn[], int length)
 {
     int sum = 0;
